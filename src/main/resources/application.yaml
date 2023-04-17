@@ -11,8 +11,4 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
-
-
-
-
-debug: true
+#debug: true

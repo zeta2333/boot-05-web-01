@@ -21,5 +21,36 @@
     <input name="_m" type="hidden" value="DELETE"/>
     <input type="submit" value="REST-DELETE 提交"/>
 </form>
+<hr>
+<a href="/car/2/owner/李四?age=18&interest=basketball&interest=game">/car/{id}/owner/{username}</a>
+<ul>
+    <li>@PathVariable（路径变量）</li>
+    <li>@RequestHeader（获取请求头）</li>
+    <li>@RequestParam（获取请求参数）</li>
+    <li>@CookieValue（获取cookie值）</li>
+    <li>@RequestBody（获取请求体[POST]）</li>
+
+    <li>@RequestAttribute（获取request域属性）</li>
+    <li>@MatrixVariable（矩阵变量）</li>
+</ul>
+<hr>
+/cars/{path}?k1=v1&k2=v2 ---- queryString 查询字符串 @RequestParam <br>
+/cars/sell;low=34;brand=byd,audi,yd ----- matrixVariable 矩阵变量 <br>
+题目：页面开发，cookie禁用了，如何获取session里面的内容？<br>
+session.set(a,b) ---> jSessionId ---> cookie ---> 每次发请求携带 <br>
+url重写：/abc;jsessionid=xxx ---- 把cookie的值使用矩阵变量的方式进行传递 <br>
+
+/boss/1/2
+/boss/1;age=20/2;age=20 ---- 将路径和分号后面的参数视为一个整体 <br>
+<a href="/cars/sell;low=34;brand=byd,audi,yd">@MatrixVariable（矩阵变量多值逗号分隔）</a> <br>
+<a href="/cars/sell;low=34;brand=audi;brand=benz;brand=bmw">@MatrixVariable（矩阵变量多值重复写键）</a> <br>
+<a href="/boss/1;age=20/2;age=10">@MatrixVariable（矩阵变量）/boss/{bossId}/{empId}</a> <br>
+<br>
+<form action="/save" method="post">
+    测试@RequestBody获取数据 <br>
+    用户名：<input type="text" name="userName"/> <br>
+    邮箱：<input type="text" name="email"/> <br>
+    <input type="submit" value="提交">
+</form>
 </body>
 </html>

@@ -38,5 +38,5 @@ public class HelloController {
         return "GET-Pycro";
     }
 
-    //扩展点：如何把_method改成自定义的名称
+
 }

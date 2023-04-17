@@ -1,6 +1,7 @@
 package usts.pycro.boot.controller;
 
 import org.springframework.web.bind.annotation.*;
+import usts.pycro.boot.bean.Person;
 
 import javax.servlet.http.Cookie;
 import java.util.HashMap;
@@ -14,6 +15,17 @@ import java.util.Map;
  */
 @RestController
 public class ParameterTestController {
+
+    /**
+     * 数据绑定：页面提交的请求数据（GET、POST）都可以和对象属性进行绑定
+     * @param person
+     * @return
+     */
+    @PostMapping("/saveUser")
+    public Person saveUser(Person person) {
+        return person;
+    }
+
     //   /car/2/owner/李四
     @GetMapping("/car/{id}/owner/{username}")
     public Map<?, ?> testPathVariable(

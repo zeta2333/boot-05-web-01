@@ -5,10 +5,10 @@ import lombok.Data;
 /**
  * @author Pycro
  * @version 1.0
- * 2023-04-17 6:08 PM
+ * 2023-04-23 11:50 AM
  */
 @Data
-public class Pet {
-    private String name;
+public class Customer {
     private Integer age;
+    private String name;
 }
